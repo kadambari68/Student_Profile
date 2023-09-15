@@ -1,0 +1,349 @@
+/* Student Profile */
+.student-profile {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  font-family: "Helvetica", Arial, sans-serif;
+  text-align: left;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(19deg, #21d4fd 0%, #b721ff 100%);
+  opacity: 0.8;
+  z-index: -100;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  display: flex; /* Initially hidden */
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 550px;
+  height: 500px;
+  padding: 50px;
+  background-color: lavenderblush;
+  border-radius: 48px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.monkey-animation {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* background-image: linear-gradient(to bottom right, purple, blue);
+  background-position: fixed;
+  background-repeat: no-repeat; */
+}
+
+.monkey-image {
+  width: 200px;
+}
+.hidden {
+  display: none;
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.card-animation {
+  animation: fade-in 0.5s ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 0.5s;
+}
+
+.card-animation:nth-child(2) {
+  animation-delay: 1s;
+}
+
+.card-animation:nth-child(3) {
+  animation-delay: 1.5s;
+}
+
+.personal-details h1 {
+  flex: 1;
+  margin-left: -15px;
+  margin-top: 5px;
+}
+
+.top-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  animation: fade-in 0.5s ease-in-out 2s forwards;
+}
+
+.personal-details {
+  flex: 1;
+  margin-left: 130px;
+  margin-top: 10px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  animation: fade-in 0.5s ease-in-out 2s forwards;
+}
+
+.name-rollno h2 {
+  margin: 5;
+}
+
+.name-rollno p {
+  margin: 4px 0;
+}
+
+.address p {
+  margin: 0;
+}
+
+/* .usn-semester {
+  text-align: right;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.usn-semester p {
+  margin: 4px 0;
+} */
+.additional-details {
+  flex: 1;
+  position: relative;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  animation: fade-in 0.5s ease-in-out 2s forwards;
+}
+
+.library-details {
+  flex: 1;
+  position: relative;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  animation: fade-in 0.5s ease-in-out 2s forwards;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgb(153, 191, 241);
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  z-index: 1;
+  top: calc(100% + -230px);
+  left: -25px;
+  height: 80%;
+  border-radius: 40px;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.additional-details {
+  flex: 1;
+  position: relative;
+  margin-right: -300px;
+  margin-top: -275px;
+  padding-left: -10px;
+}
+
+.library-details {
+  flex: 1;
+  position: relative;
+  margin-left: -250px;
+  height: 10%;
+  padding-left: -10px;
+}
+.dropdown-content {
+  display: block;
+  position: absolute;
+  background-color: rgb(153, 191, 241);
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  z-index: 1;
+  top: calc(100% + -230px);
+  left: -25px;
+  height: 80%;
+
+  border-radius: 40px;
+}
+
+.additional-details:hover .dropdown-content,
+.library-details:hover .dropdown-content {
+  display: block;
+}
+
+.additional-details h3,
+.library-details h3 {
+  padding-right: 30px;
+  margin-right: 10px;
+}
+
+.profile-picture {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 66px;
+}
+
+.profile-picture img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  padding-right: 10px;
+  margin-right: -20px;
+  margin-left: -15px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.profile-picture::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: circle-animation 5s linear infinite;
+}
+
+@keyframes moveCircles {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.profile-picture img {
+  animation: moveCircles 2s infinite;
+}
+
+.profile-picture::after:nth-child(1) {
+  background-color: #6e40c5;
+  animation-delay: 0s;
+}
+
+.profile-picture::after:nth-child(2) {
+  background-color: #21d4fd;
+  animation-delay: 1s;
+}
+
+.profile-picture::after:nth-child(3) {
+  background-color: #b721ff;
+  animation-delay: 2s;
+}
+
+.choose-file {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 40px;
+  background-color: #d651fe;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 24px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  margin-top: 16px;
+  opacity: 0.9;
+}
+.choose-file:hover {
+  color: black;
+}
+
+.choose-file input[type="file"] {
+  display: none;
+}
+
+.floating-button {
+  position: relative;
+  bottom: 0px;
+  right: 0px;
+}
+
+.button {
+  padding: 12px 24px;
+  background-color: #6e40c5;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+  opacity: 0.9;
+}
+
+.button:hover {
+  background-color: #470e85;
+}
+
+.options-list {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 8px;
+  list-style-type: none;
+  margin: 1;
+  right: 10;
+  z-index: 1;
+}
+
+.floating-button:hover .options-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  top: -55px;
+  left: -30px;
+}
+
+.options-list li {
+  padding: 4px 10px;
+  cursor: pointer;
+}
+.options-list li:hover {
+  background-color: #95b2f1;
+}
+
+/* Change text color when hovered */
+.additional-details h3:hover,
+.library-details h3:hover {
+  color: blue;
+}
